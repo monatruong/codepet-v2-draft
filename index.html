@@ -249,17 +249,6 @@
         </div>
       </aside>
 
-      <!-- Dictionary topic sidebar (only visible on the Dictionary tab) -->
-      <aside class="dictsidebar" id="dictside">
-        <div class="ds-head">From your code</div>
-        <div class="tnav sel" style="background:#7C3AED"><span class="ic2" style="background:rgba(255,255,255,.22);color:#fff">✦</span><span class="nm2">All</span><span class="ct" style="background:rgba(255,255,255,.22);color:#fff">15</span></div>
-        <div class="tnav"><span class="ic2" style="background:rgba(79,125,201,.16);color:#4F7DC9">▤</span><span class="nm2">Frameworks</span><span class="ct" style="background:rgba(79,125,201,.14);color:#4F7DC9">4</span></div>
-        <div class="tnav"><span class="ic2" style="background:rgba(201,154,78,.18);color:#C99A4E">⚒</span><span class="nm2">Tools</span><span class="ct" style="background:rgba(201,154,78,.16);color:#B5862F">4</span></div>
-        <div class="tnav"><span class="ic2" style="background:rgba(139,111,224,.16);color:#8B6FE0;font-family:var(--mono);font-size:13px">{ }</span><span class="nm2">Language</span><span class="ct" style="background:rgba(139,111,224,.14);color:#8B6FE0">1</span></div>
-        <div class="tnav"><span class="ic2" style="background:rgba(63,168,143,.16);color:#3FA88F">◍</span><span class="nm2">Web</span><span class="ct" style="background:rgba(63,168,143,.16);color:#3FA88F">2</span></div>
-        <div class="tnav"><span class="ic2" style="background:rgba(217,138,78,.16);color:#D98A4E">✲</span><span class="nm2">Concepts</span><span class="ct" style="background:rgba(217,138,78,.16);color:#D98A4E">4</span></div>
-      </aside>
-
       <main class="content">
 
         <!-- ===================== REFLECTION ===================== -->
@@ -406,10 +395,6 @@
     const sec=document.getElementById('tab-'+name); if(sec) sec.classList.add('show');
     document.querySelectorAll('.nav').forEach(n=>n.classList.remove('active'));
     const nav=document.getElementById('nav-'+name); if(nav) nav.classList.add('active');
-    const win=document.getElementById('win'), ds=document.getElementById('dictside');
-    const isDict = name==='dictionary';
-    win.classList.toggle('has-topics', isDict);
-    ds.style.display = isDict ? 'block' : 'none';
     if(name==='reflection') buildHeat();
   }
   function reviewNow(){ switchTab('dictionary'); setTimeout(goReview, 180); }
