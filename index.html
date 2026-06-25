@@ -345,6 +345,7 @@
                 <div class="skilltabs">
                   <button class="on" onclick="showSkill('context', this)">Steer · Context</button>
                   <button onclick="showSkill('shipsafe', this)">Ship-Safe</button>
+                  <button onclick="showSkill('agents', this)">Orchestrate</button>
                 </div>
                 <div class="skillcard" id="sk-context">
                   <div class="growth">
@@ -380,6 +381,23 @@
                     </div>
                   </div>
                   <p class="seqarc">Same quiet arc — noticed when you check before shipping, then it becomes a Profile strength.</p>
+                </div>
+                <div class="skillcard" id="sk-agents" hidden>
+                  <div class="growth">
+                    <div class="gbody">
+                      <div class="glabel"><span class="dia">◆</span><span class="txt">Orchestrate</span></div>
+                      <div class="gobs">
+                        <p>This session jumped between three unrelated jobs — auth, a layout bug, then the deploy script — all in one thread. When the work isn’t related, one long thread makes Claude lose the plot. Give each job its own focused agent.</p>
+                        <div class="cmds">
+                          <div class="cmd"><span class="k">/agents</span><span class="v">spin up a focused helper for a side task</span></div>
+                          <div class="cmd"><span class="k">split</span><span class="v">one thread per job, not three in one</span></div>
+                        </div>
+                        <p class="grule">One agent, one job.</p>
+                      </div>
+                      <a class="gtrack" onclick="switchTab('profile')">tracked in your growth</a>
+                    </div>
+                  </div>
+                  <p class="seqarc">Next time you split a tangle into focused agents yourself, byte just nods — then it settles in as a Profile strength.</p>
                 </div>
               </div>
             </div>
@@ -512,8 +530,7 @@
   }
   /* ---------- coaching skill switch (one card at a time) ---------- */
   function showSkill(skill, btn){
-    document.getElementById('sk-context').hidden  = (skill!=='context');
-    document.getElementById('sk-shipsafe').hidden = (skill!=='shipsafe');
+    document.querySelectorAll('.skillcard').forEach(c=>{ c.hidden = (c.id !== 'sk-'+skill); });
     document.querySelectorAll('.skilltabs button').forEach(b=>b.classList.toggle('on', b===btn));
   }
   /* ---------- Day-7 check-in ---------- */
