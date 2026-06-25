@@ -346,6 +346,7 @@
                   <button class="on" onclick="showSkill('context', this)">Steer · Context</button>
                   <button onclick="showSkill('shipsafe', this)">Ship-Safe</button>
                   <button onclick="showSkill('agents', this)">Orchestrate</button>
+                  <button onclick="showSkill('document', this)">Document</button>
                 </div>
                 <div class="skillcard" id="sk-context">
                   <div class="growth">
@@ -398,6 +399,23 @@
                     </div>
                   </div>
                   <p class="seqarc">Next time you split a tangle into focused agents yourself, byte just nods — then it settles in as a Profile strength.</p>
+                </div>
+                <div class="skillcard" id="sk-document" hidden>
+                  <div class="growth">
+                    <div class="gbody">
+                      <div class="glabel"><span class="dia">◆</span><span class="txt">Document</span></div>
+                      <div class="gobs">
+                        <p>You fixed the token-refresh race today — a tricky one. Six weeks from now, nobody (you included) will remember why that retry loop is there. Two lines now save an hour later.</p>
+                        <div class="cmds">
+                          <div class="cmd"><span class="k">note</span><span class="v">capture why it works, not just what changed</span></div>
+                          <div class="cmd"><span class="k">CLAUDE.md</span><span class="v">put project gotchas where the next agent reads them</span></div>
+                        </div>
+                        <p class="grule">Document the why — the code already shows the what.</p>
+                      </div>
+                      <a class="gtrack" onclick="switchTab('profile')">tracked in your growth</a>
+                    </div>
+                  </div>
+                  <p class="seqarc">Same quiet arc — noticed when you leave a trail behind you, then it becomes a Profile strength.</p>
                 </div>
               </div>
             </div>
