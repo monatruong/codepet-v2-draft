@@ -50,6 +50,22 @@
   .proj .badge{font-family:var(--pixel);font-size:9px;color:var(--accent-deep);background:var(--accent-tint);border:1px solid var(--accent-line);border-radius:6px;padding:2px 6px}
   .topbar .right{margin-left:auto;display:flex;align-items:center;gap:10px}
   .upg{font-size:12px;font-weight:600;color:#fff;background:var(--t-1);border-radius:8px;padding:6px 12px;cursor:pointer}
+  /* header user profile + controls (from the strategy-dashboard template) */
+  .tb-prof{position:relative;display:flex;align-items:center;gap:8px;margin-left:8px;padding:4px 10px 4px 4px;border:1px solid var(--hairline);border-radius:99px;background:var(--surface);cursor:pointer;font-size:12.5px;font-weight:600;color:var(--t-1)}
+  .tb-prof:hover{background:var(--well)}
+  .tb-prof .av{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--violet));color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700}
+  .tb-prof .cv{width:13px;height:13px;color:var(--t-3)}
+  .tb-menu{position:absolute;top:38px;left:0;min-width:172px;background:var(--surface);border:1px solid var(--hairline);border-radius:12px;box-shadow:var(--sh-l);padding:6px;display:none;z-index:80}
+  .tb-prof.open .tb-menu{display:block}
+  .tb-menu .who{padding:8px 10px 9px;border-bottom:1px solid var(--hairline);margin-bottom:5px}
+  .tb-menu .who b{display:block;font-size:13px;color:var(--t-1)}
+  .tb-menu .who span{font-size:11.5px;color:var(--t-3);font-weight:500}
+  .tb-menu a{display:block;padding:7px 10px;border-radius:8px;font-size:12.5px;font-weight:500;color:var(--t-2);text-decoration:none;cursor:pointer}
+  .tb-menu a:hover{background:var(--well);color:var(--t-1)}
+  .tb-ic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:var(--t-3);cursor:pointer;position:relative;background:none;border:0;padding:0;-webkit-appearance:none;appearance:none}
+  .tb-ic:hover{background:var(--well);color:var(--t-1)}
+  .tb-ic svg{width:17px;height:17px}
+  .tb-ic.dot::after{content:'';position:absolute;top:6px;right:7px;width:6px;height:6px;border-radius:50%;background:var(--clay);box-shadow:0 0 0 1.5px var(--surface-2)}
 
   .shell{flex:1;display:grid;grid-template-columns:212px 1fr 340px;min-height:0}
 
@@ -152,7 +168,27 @@
   .minimap .arr{color:var(--t-4)}
   .region-h{font-family:var(--pixel);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--t-4);margin:16px 0 8px 2px}
   /* environment — Claude Code setup (grouped settings cards) */
-  .envwrap{padding:18px 26px 42px;max-width:600px}
+  .envwrap{padding:18px 26px 48px;max-width:none}
+  /* guided-first: byte's recommendation strip + recommended cards */
+  .env-byte{display:flex;gap:11px;align-items:flex-start;background:color-mix(in srgb,var(--accent) 8%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:14px;padding:14px 16px;margin:2px 0 24px}
+  .env-byte .txt{font-size:13.5px;color:var(--t-2);line-height:1.55}.env-byte .txt b{color:var(--t-1);font-weight:600}
+  .env-sech{font-family:var(--pixel);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--t-4);margin:0 2px 14px}
+  .erec{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .rcard{display:flex;flex-direction:column;border-radius:15px;padding:16px 17px;background:color-mix(in srgb,var(--rc) 8%,var(--surface));border:1px solid color-mix(in srgb,var(--rc) 26%,transparent)}
+  .rcard .rc-top{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+  .rcard .rc-ic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-family:var(--pixel);font-size:11px;font-weight:600;flex:none;color:var(--rc);background:color-mix(in srgb,var(--rc) 16%,#fff)}
+  .rcard .rc-cat{font-family:var(--pixel);font-size:9px;letter-spacing:.6px;text-transform:uppercase;color:var(--rc)}
+  .rcard .rc-n{font-size:15px;font-weight:600;color:var(--t-1)}
+  .rcard .rc-why{font-size:12.5px;color:var(--t-2);line-height:1.5;margin-top:5px}
+  .rcard .rc-act{margin-top:auto;padding-top:15px;display:flex;align-items:center;gap:10px}
+  .rc-btn{font-size:12.5px;font-weight:600;border:1px solid color-mix(in srgb,var(--rc) 45%,transparent);background:var(--surface);color:color-mix(in srgb,var(--rc) 78%,#000);border-radius:9px;padding:7px 16px;cursor:pointer;white-space:nowrap;transition:.14s}
+  .rc-btn:hover{background:var(--rc);border-color:var(--rc);color:#fff}
+  .rc-you{font-size:9.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--rc)}
+  .rc-done{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--t-2)}
+  .rc-done .ck{width:18px;height:18px;border-radius:50%;background:var(--rc);color:#fff;display:grid;place-items:center;font-size:10px;font-weight:700}
+  /* browse-all catalog — demoted below recommendations */
+  .ebrowse{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;align-items:start}
+  .ebrowse .ereg, .ebrowse .ereg:first-child{margin-top:0}
   .ereg{margin-top:24px}
   .ereg:first-child{margin-top:6px}
   .ereg-h{display:flex;align-items:baseline;gap:8px;margin:0 4px 9px}
@@ -190,27 +226,55 @@
   .act .b{width:16px;height:16px;border-radius:5px;border:1.5px solid var(--accent-line);flex:none;margin-top:1px}
 
   /* ---- Department detail ---- */
-  .ddet{padding:20px 26px 30px;max-width:780px}
+  .ddet{padding:18px 26px 44px;max-width:none}
   .back{font-size:12.5px;color:var(--t-3);cursor:pointer;display:inline-flex;gap:6px;align-items:center;margin-bottom:14px}
   .back:hover{color:var(--t-1)}
-  .dhero{display:flex;gap:14px;align-items:flex-start;padding-bottom:8px}
-  .dhero .di{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-family:var(--pixel);font-size:16px;font-weight:600;flex:none}
-  .dhero h2{font-size:19px;color:var(--t-1);font-weight:600}
-  .dhero .need{font-size:13.5px;color:var(--t-2);line-height:1.5;margin-top:4px;max-width:560px}
-  .byteline{display:flex;gap:10px;align-items:flex-start;margin:14px 0 4px}
-  .byteline .txt{font-size:13px;color:var(--t-3);line-height:1.55}.byteline .txt b{color:var(--t-2);font-weight:600}
-  .tk-h{font-family:var(--pixel);font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--t-4);margin:20px 0 4px}
+  /* cover-hero banner — reuses the department's pixel-art cover */
+  .dhero2{position:relative;height:192px;border-radius:18px;overflow:hidden;background-size:cover;background-position:center 40%;background-repeat:no-repeat;image-rendering:auto;box-shadow:var(--sh-s)}
+  .dhero2 .dh-tint{position:absolute;inset:0}
+  .dhero2 .dh-label{position:absolute;left:22px;right:22px;bottom:18px;display:flex;align-items:center;gap:14px}
+  .dhero2 .dh-mono{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-family:var(--pixel);font-size:15px;font-weight:600;flex:none;box-shadow:0 2px 10px rgba(31,27,21,.18)}
+  .dhero2 h2{font-size:24px;font-weight:700;color:#fff;letter-spacing:-.2px;text-shadow:0 1px 10px rgba(31,27,21,.45)}
+  .dneed{font-size:14px;color:var(--t-2);line-height:1.55;max-width:660px;margin:16px 0 0}
+  .byteline{display:flex;gap:11px;align-items:flex-start;margin:16px 0 4px;background:color-mix(in srgb,var(--dc) 9%,var(--surface));border:1px solid color-mix(in srgb,var(--dc) 22%,transparent);border-radius:13px;padding:13px 15px}
+  .byteline .txt{font-size:13px;color:var(--t-2);line-height:1.55}.byteline .txt b{color:var(--t-1);font-weight:600}
+  .tk-h{font-family:var(--pixel);font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--t-4);margin:24px 0 12px}
   .tk{border:1px solid var(--hairline);border-radius:13px;background:var(--surface);padding:14px;margin-bottom:11px;box-shadow:var(--sh-s)}
   .tk-top{display:flex;align-items:flex-start;gap:11px}
   .tk .tt{font-size:14px;font-weight:600;color:var(--t-1)}
   .tk .td{font-size:12px;color:var(--t-3);margin-top:3px;line-height:1.45}
-  /* dept task list — minimalist: no boxes, just hairline-separated rows */
-  #tks .tk{border:none;border-radius:0;background:none;box-shadow:none;padding:16px 0;margin:0;border-bottom:1px solid var(--hairline)}
-  #tks .tk:last-child{border-bottom:none}
-  #tks .tk .td{font-size:12.5px;margin-top:4px;max-width:560px}
-  #tks .tk-act{margin-top:13px}
+  /* dept task list — tinted cards in a grid that fills the width */
+  #tks{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:15px;align-items:start}
+  #tks .tk{position:relative;overflow:hidden;border:1px solid var(--hairline);border-radius:15px;background:var(--surface);box-shadow:var(--sh-s);padding:17px 18px 16px 21px;margin:0;display:flex;flex-direction:column}
+  #tks .tk::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--dc)}
+  #tks .tk.tk-done::before{background:color-mix(in srgb,var(--dc) 40%,var(--hairline))}
+  #tks .tk .td{font-size:12.5px;margin-top:5px}
+  #tks .tk-act{margin-top:auto;padding-top:14px}
   /* global Tasks overview — tidy 2-column card grid */
-  .taskgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding-bottom:30px}
+  .taskgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .taskgrid+.task-sec{margin-top:30px}
+  .task-sec{display:flex;align-items:center;gap:9px;margin:0 2px 13px}
+  .task-sec .ts-t{font-family:var(--pixel);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--t-3)}
+  .task-sec .ts-c{font-family:var(--pixel);font-size:10px;color:#fff;background:var(--t-4);border-radius:99px;padding:1px 7px;line-height:1.5}
+  .task-sec.you .ts-t{color:var(--accent-deep)}.task-sec.you .ts-c{background:var(--accent)}
+  .task-sec .ts-line{flex:1;height:1px;background:var(--hairline)}
+  #taskList{max-width:none;padding-bottom:30px}
+  /* company — department cards: pixel cover + folder-tab panel (concave-corner shape) */
+  .deptgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;padding:8px 26px 36px;align-items:start}
+  .deptcard{position:relative;cursor:pointer;background:var(--surface);border:1px solid var(--hairline);border-radius:18px;overflow:hidden;box-shadow:var(--sh-s);transition:transform .16s ease,box-shadow .16s ease}
+  .deptcard:hover{transform:translateY(-3px);box-shadow:var(--sh-m)}
+  .deptcard .dc-cover{position:relative;height:116px;background-size:cover;background-position:center 38%;background-repeat:no-repeat;image-rendering:auto}
+  .deptcard .dc-tint{position:absolute;inset:0}
+  .deptcard .dc-badge{position:absolute;top:12px;right:14px;font-family:var(--pixel);font-size:8px;letter-spacing:.6px;text-transform:uppercase;color:#fff;background:rgba(31,27,21,.32);backdrop-filter:blur(4px);padding:4px 9px;border-radius:99px}
+  /* the folder tab: an SVG white shape with one CONCAVE corner, left-anchored so the card stays fluid */
+  .deptcard .dc-tab{position:absolute;left:0;top:70px;width:200px;height:60px;z-index:2}
+  .deptcard .dc-tabsvg{position:absolute;inset:0;display:block;filter:drop-shadow(0 -1px 1px rgba(31,27,21,.05))}
+  .deptcard .dc-mono{position:absolute;left:15px;top:10px;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-family:var(--pixel);font-size:12px;font-weight:600}
+  .deptcard .dc-tabname{position:absolute;left:61px;top:10px;height:36px;display:flex;align-items:center;max-width:118px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:14.5px;font-weight:600;color:var(--t-1)}
+  .deptcard .dc-panel{position:relative;background:var(--surface);padding:14px 16px 15px}
+  .deptcard .dc-task{font-size:12.5px;color:var(--t-3);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .deptcard .dc-foot{display:flex;align-items:baseline;gap:5px;margin-top:12px;font-size:12px;color:var(--t-4)}
+  .deptcard .dc-count{font-family:var(--pixel);font-size:18px;font-weight:600;color:var(--t-2);line-height:1}
   @media(max-width:680px){.taskgrid{grid-template-columns:1fr}}
   .taskcard{position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--hairline);border-radius:16px;padding:15px 16px 16px;min-height:128px;display:flex;flex-direction:column;box-shadow:var(--sh-s);transition:transform .16s ease,box-shadow .16s ease}
   .taskcard:hover{transform:translateY(-3px);box-shadow:var(--sh-m)}
@@ -227,6 +291,37 @@
   .who.does{color:#fff;background:var(--accent)}
   .who.draft{color:var(--gold-deep);background:var(--gold-tint);border:1px solid var(--gold-line)}
   .who.you{color:var(--t-3);background:var(--well);border:1px solid var(--hairline)}
+  /* ===== Library: filter bar + preview grid ===== */
+  .lib-bar{display:flex;align-items:center;gap:10px;padding:16px 26px 2px}
+  .lib-filters{display:flex;flex-wrap:wrap;gap:7px}
+  .lib-chip{font-size:12px;font-weight:600;color:var(--t-3);background:var(--surface);border:1px solid var(--hairline);border-radius:99px;padding:5px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:var(--sh-s);transition:color .14s,border-color .14s,background .14s}
+  .lib-chip:hover{color:var(--t-1);border-color:var(--t-4)}
+  .lib-chip.on{color:#fff;background:var(--accent);border-color:var(--accent)}
+  .lib-chip .n{font-size:10.5px;opacity:.75;font-variant-numeric:tabular-nums}
+  .lib-count{margin-left:auto;font-size:12px;color:var(--t-4);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .lib-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-content:start;padding:16px 26px 44px;max-width:920px}
+  .lib-card{position:relative;display:flex;flex-direction:column;border:1px solid var(--hairline);border-radius:14px;background:var(--surface);overflow:hidden;cursor:pointer;box-shadow:var(--sh-s);transition:transform .16s ease,box-shadow .16s ease}
+  .lib-card:hover{transform:translateY(-2px);box-shadow:var(--sh-m)}
+  /* per-type tinted preview — hue passed in via --tint/--line/--ink-h (info-box house style) */
+  .lib-prev{position:relative;height:142px;overflow:hidden;background:var(--tint,var(--surface-2));border-bottom:1px solid var(--line,var(--hairline))}
+  .lib-prev .lib-snip{padding:36px 16px 16px;font-family:var(--mono);font-size:11px;line-height:1.62;color:var(--t-3);white-space:pre-wrap}
+  .lib-prev.txt-doc .lib-snip{font-family:var(--sans);font-size:12.5px;color:var(--t-2);line-height:1.55}
+  .lib-prev:after{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(transparent,var(--tint,var(--surface-2)));pointer-events:none}
+  .lib-prev.site{background:#fff;pointer-events:none}
+  .lib-prev.site:after{display:none}
+  .lib-prev.site iframe{width:250%;height:345px;border:0;transform:scale(.4);transform-origin:top left}
+  /* the type label lives ON the tint as a floating colored caption (no solid pill) */
+  .lib-tag{position:absolute;top:12px;left:15px;z-index:2;font-family:var(--pixel);font-size:8px;text-transform:uppercase;letter-spacing:.6px;color:var(--ink-h,var(--t-3))}
+  .lib-prev.site .lib-tag{top:11px;left:11px;padding:3px 8px;border-radius:99px;background:rgba(255,255,255,.88);box-shadow:var(--sh-s)}
+  .lib-foot{display:flex;align-items:center;gap:11px;padding:13px 15px}
+  .lib-foot .di{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-family:var(--pixel);font-size:10px;font-weight:600;flex:none}
+  .lib-foot .lf-t{flex:1;min-width:0}
+  .lib-foot .lf-title{font-size:13.5px;font-weight:600;color:var(--t-1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .lib-foot .lf-meta{font-size:11.5px;color:var(--t-3);margin-top:2px}
+  .lib-foot .lf-open{font-size:11px;font-weight:600;color:var(--accent);opacity:0;transition:opacity .14s;flex:none}
+  .lib-card:hover .lf-open{opacity:1}
+  .lib-empty{grid-column:1/-1;color:var(--t-4);font-size:13px;padding:8px 2px;line-height:1.6}
+  @media(max-width:900px){.lib-grid{grid-template-columns:1fr}}
   .tk-act{margin-top:12px;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
   .btn{font-size:12.5px;font-weight:600;border:none;cursor:pointer;border-radius:9px;padding:8px 14px;background:var(--accent);color:#fff;font-family:var(--sans)}
   .btn:hover{background:var(--accent-deep)}.btn:disabled{opacity:.5;cursor:default}
@@ -741,7 +836,20 @@
   <div class="topbar">
     <span class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></span>
     <span class="proj">Codepet <span class="badge">macOS</span></span>
-    <span class="right"><span class="upg">Upgrade</span></span>
+    <button class="tb-prof" id="tbProf">
+      <span class="av">M</span>Mona
+      <svg class="cv" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="tb-menu">
+        <div class="who"><b>Mona</b><span>nguyen@murror.app</span></div>
+        <a>Account</a><a>Preferences</a><a>Sign out</a>
+      </div>
+    </button>
+    <span class="right">
+      <button class="tb-ic" title="Search"><svg viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.7"/><path d="M14 14l3.5 3.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+      <button class="tb-ic dot" title="Notifications"><svg viewBox="0 0 20 20" fill="none"><path d="M6 8.5a4 4 0 0 1 8 0c0 2.8 1.1 4 1.7 4.7H4.3C4.9 12.5 6 11.3 6 8.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.4 16a1.7 1.7 0 0 0 3.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+      <button class="tb-ic" title="Settings"><svg viewBox="0 0 20 20" fill="none"><path d="M3 6.5h14M3 13.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="6.5" r="2.1" fill="var(--surface-2)" stroke="currentColor" stroke-width="1.6"/><circle cx="12.5" cy="13.5" r="2.1" fill="var(--surface-2)" stroke="currentColor" stroke-width="1.6"/></svg></button>
+      <span class="upg">Upgrade</span>
+    </span>
   </div>
 
   <div class="shell">
@@ -764,13 +872,8 @@
     <main class="main" id="main">
       <!-- HOME -->
       <section class="view on" id="v-home">
-        <div class="vhead"><h1>Your company</h1><div class="sub">Eight departments, one map. Walk byte to a location to get to work.</div></div>
-        <div class="canvas" id="canvas">
-          <div class="say" id="homeSay">3 departments need you today</div>
-          <svg class="ring" id="ringSvg"></svg>
-          <div class="byte-token" id="byteTok"><img class="bimg" src="byte.png" alt="byte" draggable="false"></div>
-          <div class="mapguide"><span class="gb"><img src="byte.png" alt="byte"></span><span class="gt">Tap any location and I'll walk over — then we get to work together.</span></div>
-        </div>
+        <div class="vhead"><h1>Your company</h1><div class="sub" id="homeSub">Eight departments — here's where byte needs you.</div></div>
+        <div class="deptgrid" id="deptGrid"></div>
       </section>
 
       <!-- ROADMAP -->
@@ -794,7 +897,8 @@
       <!-- LIBRARY -->
       <section class="view" id="v-library">
         <div class="vhead"><h1>Library</h1><div class="sub">Everything byte has shipped or drafted — approved by you, kept in one place.</div></div>
-        <div class="rmwrap" id="libList"></div>
+        <div class="lib-bar"><div class="lib-filters" id="libFilters"></div><div class="lib-count" id="libNum"></div></div>
+        <div class="lib-grid" id="libList"></div>
       </section>
 
       <!-- ENVIRONMENT -->
@@ -1355,7 +1459,7 @@ function wireOb(){
   }
 }
 function finishOb(){
-  try{ localStorage.setItem('cp_onboarded','1'); }catch(e){}
+  /* onboarding intentionally not remembered — see enterApp */
   $('#ob').classList.add('hidden');
   setTimeout(()=>{$('#toast').classList.add('on');setTimeout(()=>$('#toast').classList.remove('on'),4200);},400);
 }
@@ -1417,37 +1521,32 @@ function terrain(W,H){
 }
 
 function renderMap(){
-  const canvas=$('#canvas'), svg=$('#ringSvg');
-  const W=canvas.clientWidth||860, H=canvas.clientHeight||588;
-  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
-  NODEPOS=MAP_PTS.map(([nx,ny])=>[+(nx*W).toFixed(1),+(ny*H).toFixed(1)]);
-  startPos=[+(START_PT[0]*W).toFixed(1),+(START_PT[1]*H).toFixed(1)];
-  /* trail begins at the gate, then threads every location */
-  const d=smoothPath([startPos,...NODEPOS]);
-  svg.innerHTML=terrain(W,H)
-    +`<path d="${d}" fill="none" stroke="#E7DFCE" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>`
-    +`<path d="${d}" fill="none" stroke="#FCFBF6" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>`
-    +`<path d="${d}" fill="none" stroke="#CBBFA6" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 12"/>`;
-  /* clear & redraw markers */
-  $$('#canvas .tnode, #canvas .gate').forEach(n=>n.remove());
-  /* the gate / start */
-  const gate=document.createElement('div');
-  gate.className='gate'; gate.style.left=startPos[0]+'px'; gate.style.top=startPos[1]+'px';
-  gate.innerHTML=`<div class="gdot"></div><div class="gtag">START</div>`;
-  canvas.appendChild(gate);
-  /* location nodes */
-  DEPTS.forEach((dep,i)=>{
-    const [x,y]=NODEPOS[i];
-    const status=dep.status==='attention'?'Needs you':dep.status==='ready'?'Ready':'All clear';
-    const node=document.createElement('div');
-    node.className='tnode'+(dep.pend?'':' done'); node.style.left=x+'px'; node.style.top=y+'px';
-    node.dataset.d=dep.k; node.dataset.i=i;
-    node.innerHTML=`<div class="pinwrap"><div class="pin" style="background:var(${DCOL[dep.k]||'--accent'})"><span>${dep.ab}</span></div>${dep.pend?'<span class="pend">'+dep.pend+'</span>':''}</div>
-      <div class="tn">${dep.name}</div>
-      <div class="ts">${dep.pend?dep.pend+' to do':status}</div>`;
-    canvas.appendChild(node);
-  });
-  placeByte(false);
+  const grid=$('#deptGrid'); if(!grid) return;
+  const need=DEPTS.filter(d=>d.status==='attention').length;
+  const sub=$('#homeSub'); if(sub) sub.textContent=`Eight departments · ${need} need you today`;
+  grid.innerHTML=DEPTS.map((dep,i)=>{
+    const col=DCOL[dep.k]||'--accent';
+    const task=(dep.tasks&&dep.tasks[0]&&dep.tasks[0].t)?dep.tasks[0].t:'All clear';
+    const attn=dep.status==='attention';
+    const foot = dep.pend ? `<span class="dc-count">${dep.pend}</span> to do` : 'All clear';
+    return `<div class="deptcard" data-d="${dep.k}">
+      <div class="dc-cover" style="background-image:url('covers/${dep.k}.png')">
+        <span class="dc-tint" style="background:linear-gradient(180deg,transparent 45%,color-mix(in srgb,var(${col}) 30%,transparent))"></span>
+        ${attn?'<span class="dc-badge">needs you</span>':''}
+      </div>
+      <div class="dc-panel">
+        <div class="dc-task">${task}</div>
+        <div class="dc-foot">${foot}</div>
+      </div>
+      <div class="dc-tab">
+        <svg class="dc-tabsvg" viewBox="0 0 200 60" width="200" height="60" preserveAspectRatio="none">
+          <path d="M0,14 A14 14 0 0 1 14,0 L146,0 A14 14 0 0 1 160,14 L160,26 A20 20 0 0 0 180,46 L200,46 L200,60 L0,60 Z" fill="var(--surface)"/>
+        </svg>
+        <span class="dc-mono" style="background:color-mix(in srgb,var(${col}) 16%,white);color:var(${col})">${dep.ab}</span>
+        <span class="dc-tabname">${dep.name}</span>
+      </div>
+    </div>`;
+  }).join('');
 }
 
 function placeByte(animate){
@@ -1500,19 +1599,24 @@ function show(v){
 }
 $$('.side .nav[data-view]').forEach(n=>n.addEventListener('click',()=>show(n.dataset.view)));
 $$('.side .nav[data-d]').forEach(n=>n.addEventListener('click',()=>openDept(n.dataset.d)));
-$('#canvas').addEventListener('click',e=>{const c=e.target.closest('.tnode');if(c)walkTo(+c.dataset.i,()=>openDept(c.dataset.d));});
+$('#deptGrid').addEventListener('click',e=>{const c=e.target.closest('.deptcard');if(c)openDept(c.dataset.d);});
+/* header profile dropdown */
+(function(){const p=$('#tbProf');if(!p)return;
+  p.addEventListener('click',e=>{e.stopPropagation();p.classList.toggle('open');});
+  p.querySelector('.tb-menu').addEventListener('click',e=>e.stopPropagation());
+  document.addEventListener('click',()=>p.classList.remove('open'));})();
 
 /* ===================== ENVIRONMENT (Claude Code setup) ===================== */
 const ENV={
   skills:[
     {n:'Web research', ab:'Wr', d:'byte searches the web and cites sources in its drafts.', s:0},
-    {n:'PRD writer', ab:'Pr', d:'Turn a rough idea into a structured product spec.', s:1},
-    {n:'Code review', ab:'Cr', d:'Reviews diffs for bugs before anything ships.', s:0},
+    {n:'PRD writer', ab:'Pr', d:'Turn a rough idea into a structured product spec.', s:1, rec:1, why:'Turn each beta feature into a clear spec before byte builds it.'},
+    {n:'Code review', ab:'Cr', d:'Reviews diffs for bugs before anything ships.', s:0, rec:1, why:'Catch bugs before they reach your beta testers.'},
     {n:'Changelog', ab:'Ch', d:'Auto-drafts release notes from your commits.', s:0},
   ],
   connectors:[
-    {n:'GitHub', ab:'Gh', d:'Read repos, open PRs, track issues.', s:1},
-    {n:'Notion', ab:'No', d:'Sync briefs, roadmaps, and docs.', s:0},
+    {n:'GitHub', ab:'Gh', d:'Read repos, open PRs, track issues.', s:1, rec:1, why:'byte reads your repo and opens PRs as it ships beta work.'},
+    {n:'Notion', ab:'No', d:'Sync briefs, roadmaps, and docs.', s:0, rec:1, why:'You collect beta feedback in Notion — connect it so byte can write there.'},
     {n:'Figma', ab:'Fi', d:'Pull designs and components into context.', s:0},
     {n:'Slack', ab:'Sl', d:'Post updates and gather feedback.', s:0},
     {n:'Linear', ab:'Li', d:'Create and update issues from your tasks.', s:0},
@@ -1520,23 +1624,48 @@ const ENV={
   agents:[
     {n:'Code Reviewer', ab:'Cr', d:'A subagent that audits changes for correctness.', s:0},
     {n:'Explorer', ab:'Ex', d:'Searches the codebase to answer questions fast.', s:1},
-    {n:'Test Writer', ab:'Tw', d:'Generates tests for new code.', s:0},
+    {n:'Test Writer', ab:'Tw', d:'Generates tests for new code.', s:0, rec:1, why:'Writes tests as byte ships each new beta feature.'},
     {n:'Migrator', ab:'Mg', d:'Runs large, repetitive refactors safely.', s:0},
   ],
 };
 const ENV_CATS=[['skills','Skills','sk','Add','Active'],['connectors','Connectors','cn','Connect','Connected'],['agents','Agents','ag','Enable','Enabled']];
+const ENV_META={skills:{label:'Skill',col:'--accent',add:'Turn on',on:'byte turned this on'},
+                connectors:{label:'Connector',col:'--blue',add:'Connect',on:'Connected'},
+                agents:{label:'Agent',col:'--teal',add:'Turn on',on:'byte turned this on'}};
 function renderEnv(){
-  let h='';
+  /* ---- Recommended for your project (byte-curated) ---- */
+  const recs=[];
+  ['skills','connectors','agents'].forEach(k=>ENV[k].forEach((x,i)=>{ if(x.rec) recs.push({k,i,x}); }));
+  const rh=recs.map(({k,i,x})=>{
+    const m=ENV_META[k], needsYou=(k==='connectors');
+    const act=x.s
+      ? `<span class="rc-done"><span class="ck">✓</span>${m.on}</span>`
+      : `<button class="rc-btn" data-k="${k}" data-i="${i}">${m.add}</button>`+(needsYou?'<span class="rc-you">needs you</span>':'');
+    return `<div class="rcard" style="--rc:var(${m.col})">
+      <div class="rc-top"><span class="rc-ic">${x.ab}</span><span class="rc-cat">${m.label}</span></div>
+      <div class="rc-n">${x.n}</div>
+      <div class="rc-why">${x.why||x.d}</div>
+      <div class="rc-act">${act}</div>
+    </div>`;
+  }).join('');
+  const needYou=recs.filter(r=>!r.x.s && r.k==='connectors').length;
+  /* ---- Browse all (full catalog, demoted) ---- */
+  let bh='';
   ENV_CATS.forEach(([key,label,cls,addL,onL])=>{
     const items=ENV[key], on=items.filter(x=>x.s).length;
-    h+=`<div class="ereg"><div class="ereg-h"><span class="t">${label}</span><span class="c">${on}/${items.length}</span></div><div class="env-card">`;
+    bh+=`<div class="ereg"><div class="ereg-h"><span class="t">${label}</span><span class="c">${on}/${items.length}</span></div><div class="env-card">`;
     items.forEach((x,i)=>{
-      h+=`<div class="erow ec-${cls}"><div class="eic">${x.ab}</div><div class="en">${x.n}</div><button class="eb ${x.s?'on':''}" data-k="${key}" data-i="${i}">${x.s?'<span class="ck">✓</span>'+onL:addL}</button></div>`;
+      bh+=`<div class="erow ec-${cls}"><div class="eic">${x.ab}</div><div class="en">${x.n}</div><button class="eb ${x.s?'on':''}" data-k="${key}" data-i="${i}">${x.s?'<span class="ck">✓</span>'+onL:addL}</button></div>`;
     });
-    h+=`</div></div>`;
+    bh+=`</div></div>`;
   });
-  $('#envBody').innerHTML=h;
-  $$('#envBody .eb').forEach(b=>b.addEventListener('click',()=>{
+  $('#envBody').innerHTML=
+    `<div class="env-byte"><div class="byte s28">${byteSprite}</div><div class="txt">Based on your <b>beta launch</b>, here's the toolkit I'd set up. I've turned on the skills and agents I can${needYou?` — you just need to connect ${needYou} account${needYou>1?'s':''}.`:'.'}</div></div>
+     <div class="env-sech">Recommended for your project</div>
+     <div class="erec">${rh}</div>
+     <div class="env-sech" style="margin-top:36px">Browse all</div>
+     <div class="ebrowse">${bh}</div>`;
+  $$('#envBody [data-k]').forEach(b=>b.addEventListener('click',()=>{
     const k=b.dataset.k, i=+b.dataset.i; ENV[k][i].s=ENV[k][i].s?0:1; renderEnv(); updateEnvCount();
   }));
 }
@@ -1549,22 +1678,18 @@ renderEnv(); updateEnvCount();
 /* splash → onboarding (with skip + memory so builds don't restart from scratch) */
 const OB_KEY='cp_onboarded';
 function enterApp(remember){
-  if(remember){ try{ localStorage.setItem(OB_KEY,'1'); }catch(e){} }
+  /* note: onboarding is intentionally NOT remembered — it shows on every refresh */
   const sp=$('#splash'), ob=$('#ob');
   if(sp){ sp.classList.add('hide'); setTimeout(()=>{ if(sp.parentNode) sp.remove(); },600); }
   if(ob){ ob.classList.add('hidden'); }
 }
 (function(){
   const sp=$('#splash'), ob=$('#ob');
-  const params=new URLSearchParams(location.search);
-  const forceOb = params.has('onboarding') || location.hash==='#onboarding';
-  let done=false; try{ done = localStorage.getItem(OB_KEY)==='1'; }catch(e){}
   // skip controls
   const ssk=$('#splashSkip'); if(ssk) ssk.addEventListener('click',e=>{ e.stopPropagation(); enterApp(true); });
   const osk=$('#obSkip'); if(osk) osk.addEventListener('click',()=>enterApp(true));
-  if(forceOb){ try{ localStorage.removeItem(OB_KEY); }catch(e){} }
-  else if(done){ if(sp) sp.remove(); if(ob) ob.classList.add('hidden'); return; }   // jump straight in
-  // first run: click splash → reveal onboarding underneath
+  try{ localStorage.removeItem(OB_KEY); }catch(e){}   // always show onboarding on load (no auto-skip on refresh)
+  // every load: splash → click → reveal onboarding underneath
   let dismissed=false;
   const go=()=>{ if(dismissed)return; dismissed=true; if(sp){ sp.classList.add('hide'); setTimeout(()=>{ if(sp.parentNode) sp.remove(); },600); } };
   if(sp) sp.addEventListener('click',e=>{ if(e.target.closest('.skip-pre'))return; go(); });
@@ -1573,9 +1698,16 @@ function enterApp(remember){
 /* ===================== DEPARTMENT DETAIL ===================== */
 function openDept(k){
   const d=DEPTS.find(x=>x.k===k);
-  $('#ddet').innerHTML=
+  const col=DCOL[k]||'--accent';
+  const ddet=$('#ddet');
+  ddet.style.setProperty('--dc',`var(${col})`);
+  ddet.innerHTML=
    `<div class="back" id="back"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Company</div>
-    <div class="dhero"><div class="di c-${d.k}">${d.ab}</div><div><h2>${d.name}</h2><div class="need">${d.need}</div></div></div>
+    <div class="dhero2" style="background-image:url('covers/${k}.png')">
+      <span class="dh-tint" style="background:linear-gradient(180deg,transparent 0%,transparent 36%,color-mix(in srgb,var(${col}) 52%,rgba(20,16,12,.62)) 100%)"></span>
+      <div class="dh-label"><span class="dh-mono c-${d.k}">${d.ab}</span><h2>${d.name}</h2></div>
+    </div>
+    <div class="dneed">${d.need}</div>
     <div class="byteline"><div class="byte s28">${byteSprite}</div><div class="txt">${d.byte}</div></div>
     <div class="tk-h">What needs doing · ${d.tasks.filter(t=>!t.done).length} of ${d.tasks.length} left</div>
     <div id="tks"></div>`;
@@ -2138,15 +2270,82 @@ function refresh(){
   const say=$('#homeSay'); if(say) say.textContent = attn>0? attn+' department'+(attn>1?'s':'')+' need you today' : 'All departments calm — nice work';
 }
 function closeArt(){ $('#artModal').classList.remove('on'); }
+let libFilter='all';
+const LIB_TAG={site:'live site',screens:'prototype',sheet:'live model',build:'shipped & verified',doc:'draft',prep:'checklist for you',
+  post:'social post',email:'email',calendar:'content plan',legal:'legal draft',dms:'outreach DMs',checklist:'checklist',pr:'pull request'};
+const LIB_BUCKET={site:'Sites',screens:'Prototypes',sheet:'Models',pr:'Builds',build:'Builds',post:'Posts',email:'Emails',
+  calendar:'Plans',dms:'Outreach',legal:'Docs',doc:'Docs',checklist:'Checklists',prep:'Checklists'};
+const LIB_BORDER=['Sites','Prototypes','Models','Builds','Posts','Emails','Plans','Outreach','Docs','Checklists'];
+const LIB_TC={site:'var(--accent)',screens:'var(--violet)',sheet:'var(--accent)',pr:'var(--accent)',build:'var(--accent)',
+  post:'var(--clay)',email:'var(--clay)',calendar:'var(--clay)',dms:'var(--accent)',legal:'var(--violet)',doc:'#B7AE9E',
+  checklist:'var(--gold-deep)',prep:'var(--gold-deep)'};
+/* per-type preview skin — light hue tint + same-hue border + readable label ink */
+const LIB_SKIN={
+  site:    {tint:'#fff',                line:'var(--hairline)',    ink:'var(--accent-deep)'},
+  screens: {tint:'var(--violet-tint)', line:'var(--violet-line)', ink:'#7A23C0'},
+  sheet:   {tint:'var(--accent-tint)', line:'var(--accent-line)', ink:'var(--accent-deep)'},
+  pr:      {tint:'var(--blue-tint)',   line:'var(--blue-line)',   ink:'#1D4ED8'},
+  build:   {tint:'var(--blue-tint)',   line:'var(--blue-line)',   ink:'#1D4ED8'},
+  post:    {tint:'var(--clay-tint)',   line:'var(--clay-line)',   ink:'#C2410C'},
+  email:   {tint:'var(--clay-tint)',   line:'var(--clay-line)',   ink:'#C2410C'},
+  calendar:{tint:'var(--clay-tint)',   line:'var(--clay-line)',   ink:'#C2410C'},
+  dms:     {tint:'var(--accent-tint)', line:'var(--accent-line)', ink:'var(--accent-deep)'},
+  legal:   {tint:'var(--violet-tint)', line:'var(--violet-line)', ink:'#7A23C0'},
+  doc:     {tint:'var(--well)',        line:'var(--hairline)',    ink:'var(--t-3)'},
+  checklist:{tint:'var(--gold-tint)',  line:'var(--gold-line)',   ink:'var(--gold-deep)'},
+  prep:    {tint:'var(--gold-tint)',   line:'var(--gold-line)',   ink:'var(--gold-deep)'}};
+function libBucket(t){return LIB_BUCKET[t]||'Docs';}
 function updateLibrary(){
   $('#libCount').textContent=LIBRARY.length||'';
-  const TAG={site:'live site',screens:'prototype',sheet:'live model',build:'shipped & verified',doc:'draft',prep:'checklist for you',
-    post:'social post',email:'email',calendar:'content plan',legal:'legal draft',dms:'outreach DMs',checklist:'checklist',pr:'pull request'};
+  const num=$('#libNum'); if(num) num.textContent=LIBRARY.length?LIBRARY.length+(LIBRARY.length===1?' item':' items'):'';
+  /* filter chips — only buckets that exist, in canonical order */
+  const counts={}; LIBRARY.forEach(x=>{const b=libBucket(x.type); counts[b]=(counts[b]||0)+1;});
+  const buckets=LIB_BORDER.filter(b=>counts[b]);
+  if(libFilter!=='all' && !counts[libFilter]) libFilter='all';
+  const fil=$('#libFilters');
+  if(fil){
+    fil.innerHTML = LIBRARY.length
+      ? `<div class="lib-chip ${libFilter==='all'?'on':''}" data-f="all">All <span class="n">${LIBRARY.length}</span></div>`
+        + buckets.map(b=>`<div class="lib-chip ${libFilter===b?'on':''}" data-f="${b}">${b} <span class="n">${counts[b]}</span></div>`).join('')
+      : '';
+    fil.querySelectorAll('.lib-chip').forEach(c=>c.addEventListener('click',()=>{libFilter=c.dataset.f; updateLibrary();}));
+  }
+  /* preview cards */
+  const shown=LIBRARY.map((x,i)=>({x,i})).filter(({x})=> libFilter==='all' || libBucket(x.type)===libFilter);
   $('#libList').innerHTML = LIBRARY.length
-    ? LIBRARY.map((x,i)=>`<div class="tk libopen" data-lib="${i}" style="margin-bottom:10px"><div class="tk-top"><div class="di c-${x.k}" style="width:26px;height:26px;border-radius:7px;font-size:9px">${x.ab}</div><div style="flex:1"><div class="tt">${x.title}</div><div class="td">${x.dept} · ${TAG[x.type]}</div></div><span class="who does">open</span></div></div>`).join('')
-    : '<div style="color:var(--t-4);font-size:13px;padding:8px 2px;line-height:1.6">Nothing here yet. When byte finishes a task and you approve it, the deliverable lands here — drafts, shipped changes, and checklists in one place.</div>';
-  $$('#libList .libopen').forEach(el=>el.addEventListener('click',()=>viewArtifact(LIBRARY[+el.dataset.lib])));
+    ? shown.map(({x,i})=>{
+        const isSite=x.type==='site', mono=(x.type==='pr'||x.type==='build');
+        const sk=LIB_SKIN[x.type]||LIB_SKIN.doc;
+        const pc='lib-prev'+(isSite?' site':(mono?'':' txt-doc'));
+        const sv=`--tint:${sk.tint};--line:${sk.line};--ink-h:${sk.ink}`;
+        const tag=`<span class="lib-tag">${LIB_TAG[x.type]}</span>`;
+        const snip=isSite?'':`<div class="lib-snip">${esc((x.out||'').split('\n').filter(l=>l.trim()).slice(0,6).join('\n'))}</div>`;
+        return `<div class="lib-card libopen" data-lib="${i}"><div class="${pc}" style="${sv}">${tag}${snip}</div>`
+          +`<div class="lib-foot"><div class="di c-${x.k}">${x.ab}</div><div class="lf-t"><div class="lf-title">${x.title}</div><div class="lf-meta">${x.dept} · ${LIB_TAG[x.type]}</div></div><span class="lf-open">open</span></div></div>`;
+      }).join('')
+    : '<div class="lib-empty">Nothing here yet. When byte finishes a task and you approve it, the deliverable lands here — drafts, shipped changes, and checklists in one place.</div>';
+  $$('#libList .lib-card').forEach(el=>{
+    const it=LIBRARY[+el.dataset.lib];
+    if(it.type==='site' && it.site){ const pv=el.querySelector('.lib-prev.site'); if(pv){ const f=document.createElement('iframe'); f.setAttribute('sandbox','allow-same-origin'); f.setAttribute('scrolling','no'); f.setAttribute('title','thumb'); f.srcdoc=it.site; pv.appendChild(f);} }
+    el.addEventListener('click',()=>viewArtifact(it));
+  });
 }
+/* DEMO SEED — a few pre-approved deliverables so the populated Library is visible.
+   Remove this block (and the seedLibrary() call) to ship the empty first-run state. */
+function seedLibrary(){
+  ['Build the Codepet landing page','Write the launch announcement post','Build the waitlist conversion email','Instrument the dual go/no-go signal','Set up the TestFlight beta']
+    .forEach(title=>{
+      let t,d;
+      DEPTS.forEach(dep=>dep.tasks.forEach(x=>{ if(x.t===title){t=x;d=dep;} }));
+      if(!t) return;
+      const type=artType(t, t.who==='you');
+      const {file,head,tag}=artMeta(t,type);
+      LIBRARY.push({title:t.t,dept:d.name,k:d.k,ab:d.ab,type,out:t.out,file,head,tag,
+        site:t.site,screens:t.screens,sheet:t.sheet,post:t.post,email:t.email,
+        calendar:t.calendar,legal:t.legal,dms:t.dms,checklist:t.checklist,pr:t.pr});
+    });
+}
+seedLibrary();
 updateLibrary();
 
 /* ===================== ROADMAP (branching journey map) ===================== */
@@ -2259,17 +2458,28 @@ function selectNode(id){
 /* ===================== TASKS ===================== */
 (function(){
   const TTINT={eng:'--blue-tint',mkt:'--clay-tint',ops:'--teal-tint',fin:'--gold-tint',legal:'--violet-tint',design:'--violet-tint',sales:'--accent-tint',support:'--rose-tint'};
-  let html='';
-  DEPTS.forEach(d=>d.tasks.forEach(t=>{
-    const st=taskState(t,true);
-    html+=`<div class="taskcard" style="--gtint:var(${TTINT[d.k]||'--accent-tint'})">
+  /* organize by what each task is waiting on — your to-dos first */
+  const ALL=[]; DEPTS.forEach(d=>d.tasks.forEach(t=>ALL.push({d,t})));
+  const needsYou=x=>!x.t.done && (x.t.who==='you'||x.t.who==='draft');
+  const SECTIONS=[
+    {cls:'you', label:'Needs you',     test:needsYou},
+    {cls:'',    label:'byte is doing', test:x=>!x.t.done && !needsYou(x)},
+    {cls:'',    label:'Done',          test:x=>x.t.done},
+  ];
+  const card=({d,t})=>{const st=taskState(t,true);
+    return `<div class="taskcard" style="--gtint:var(${TTINT[d.k]||'--accent-tint'})">
         <div class="tc-head"><span class="tc-dept">${d.name}</span></div>
         <div class="tc-title">${t.t}</div>
         <div class="tc-foot"><span class="tstate ${st.cls}"><i></i>${st.label}</span></div>
         <div class="tc-glow"></div>
-      </div>`;
-  }));
-  $('#taskList').innerHTML=`<div class="taskgrid">${html}</div>`;
+      </div>`;};
+  let html='';
+  SECTIONS.forEach(s=>{
+    const items=ALL.filter(s.test); if(!items.length) return;
+    html+=`<div class="task-sec ${s.cls}"><span class="ts-t">${s.label}</span><span class="ts-c">${items.length}</span><span class="ts-line"></span></div>`;
+    html+=`<div class="taskgrid">${items.map(card).join('')}</div>`;
+  });
+  $('#taskList').innerHTML=html;
 })();
 </script>
 </body>
